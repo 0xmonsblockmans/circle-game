@@ -1,0 +1,8 @@
+import{jsx as _jsx}from"react/jsx-runtime";import{motion}from"framer-motion";export const withRandomFlyIn=Component=>{// This function generates a random starting position
+const getRandomStart=()=>{const directions=[// Start off-screen from the top
+{x:0,y:"-100vh"},// Start off-screen from the bottom
+{x:0,y:"100vh"},// Start off-screen from the left
+{x:"-100vw",y:0},// Start off-screen from the right
+{x:"100vw",y:0}];return directions[Math.floor(Math.random()*directions.length)];};return props=>{const start=getRandomStart();return /*#__PURE__*/_jsx(motion.div,{initial:start,animate:{x:0,y:0},transition:{type:"spring",stiffness:60},children:/*#__PURE__*/_jsx(Component,{...props})});};};
+export const __FramerMetadata__ = {"exports":{"withRandomFlyIn":{"type":"reactHoc","name":"withRandomFlyIn","annotations":{"framerContractVersion":"1"}},"__FramerMetadata__":{"type":"variable"}}}
+//# sourceMappingURL=./FlyImage.map
